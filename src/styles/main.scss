@@ -1,0 +1,12 @@
+@use "variable" as *;
+@use "base" as *;
+@use "mixins" as *;
+
+h1 {
+    background-color: $primary;
+    color: $light-gray;
+}
+
+body {
+    @include flex-center;
+}
