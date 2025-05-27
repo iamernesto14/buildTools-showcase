@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Webpack",
+    "description": "A powerful module bundler for JavaScript applications.",
+    "category": "Bundler",
+    "link": "https://webpack.js.org/"
+  },
+  {
+    "id": 2,
+    "name": "Vite",
+    "description": "A fast build tool that leverages native ES modules and modern browser features.",
+    "category": "Bundler / Dev Server",
+    "link": "https://vitejs.dev/"
+  },
+  {
+    "id": 3,
+    "name": "Parcel",
+    "description": "A zero-config web application bundler with fast performance.",
+    "category": "Bundler",
+    "link": "https://parceljs.org/"
+  },
+  {
+    "id": 4,
+    "name": "Rollup",
+    "description": "A module bundler optimized for smaller and faster libraries.",
+    "category": "Bundler",
+    "link": "https://rollupjs.org/"
+  },
+  {
+    "id": 5,
+    "name": "Gulp",
+    "description": "A toolkit to automate & enhance your workflow using JavaScript-based tasks.",
+    "category": "Task Runner",
+    "link": "https://gulpjs.com/"
+  },
+  {
+    "id": 6,
+    "name": "Grunt",
+    "description": "A JavaScript task runner for automation of repetitive tasks like minification and compilation.",
+    "category": "Task Runner",
+    "link": "https://gruntjs.com/"
+  },
+  {
+    "id": 7,
+    "name": "Babel",
+    "description": "A JavaScript compiler that converts modern ES6+ code into backwards compatible JavaScript.",
+    "category": "Transpiler",
+    "link": "https://babeljs.io/"
+  },
+  {
+    "id": 8,
+    "name": "ESBuild",
+    "description": "An extremely fast JavaScript bundler and minifier written in Go.",
+    "category": "Bundler / Minifier",
+    "link": "https://esbuild.github.io/"
+  },
+  {
+    "id": 9,
+    "name": "Snowpack",
+    "description": "A lightning-fast frontend build tool for modern web apps, now succeeded by Vite.",
+    "category": "Bundler / Dev Server",
+    "link": "https://www.snowpack.dev/"
+  }
+]
