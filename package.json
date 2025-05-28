@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "format": "prettier --write 'src/**/*.{ts,js,scss}'",
+    "check": "npm run lint && npm run format",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,13 +23,20 @@
   "homepage": "https://github.com/iamernesto14/buildTools-showcase#readme",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.27.0",
     "css-loader": "^7.1.2",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "globals": "^16.2.0",
     "html-webpack-plugin": "^5.6.3",
+    "prettier": "^3.5.3",
     "sass": "^1.89.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.1"
