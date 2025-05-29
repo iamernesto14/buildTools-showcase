@@ -38,7 +38,8 @@ export default {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'data/data.json', to: 'data/data.json' },
+        { from: 'src/data/data.json', to: 'data/data.json' },
+        { from: 'src/favicon.svg', to: 'favicon.svg' },
       ],
     }),
   ],
