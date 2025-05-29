@@ -19,7 +19,7 @@ export default {
     rules: [
       {
         test: /\.ts$/,
-        use: ['babel-loader', 'ts-loader'],
+        use: 'ts-loader',
         exclude: /node_modules/,
       },
       {
@@ -33,7 +33,7 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/templates/index.html',
+      template: './src/index.html',
     }),
   ],
   optimization: {
