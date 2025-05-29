@@ -39,11 +39,7 @@ export default {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          inline: 1,
-        },
-      }),
+      new TerserPlugin(), // Removed invalid terserOptions
       new CssMinimizerPlugin(),
     ],
     splitChunks: {
