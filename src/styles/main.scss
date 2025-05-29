@@ -96,9 +96,22 @@ nav .btn {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
   gap: 24px;
   padding: 24px 0;
+  justify-content: center;
+}
+
+.category-section {
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  color: $primary;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid $accent;
+  padding-bottom: 0.5rem;
 }
 
 .card {
@@ -107,6 +120,7 @@ nav .btn {
   border-radius: 1rem;
   overflow: hidden;
   width: 100%;
+  max-width: 300px;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -324,4 +338,33 @@ body.light-theme {
     font-size: 3rem;
     max-width: 26ch;
   }
+}
+
+.tab-bar {
+  @include flex-center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background: $accent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: $text;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab:hover {
+  background: $accent;
+  color: $primary;
+}
+
+.tab.active {
+  background: $primary;
+  color: $gradient3;
+  font-weight: bold;
 }
