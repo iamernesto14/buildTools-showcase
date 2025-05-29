@@ -355,7 +355,9 @@ body.light-theme {
   color: $text;
   cursor: pointer;
   border-radius: 5px 5px 0 0;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .tab:hover {
