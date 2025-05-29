@@ -4,15 +4,15 @@
      "version": "1.0.0",
      "main": "script.js",
      "scripts": {
-  "dev": "webpack serve --mode development",
-  "build": "webpack --mode production",
-  "lint": "eslint src/**/*.{ts,tsx}",
-  "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
-  "check": "npm run lint && npm run format",
-  "prepare": "husky && husky install",
-  "precommit": "npm run check",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+     "dev": "webpack serve --mode development",
+     "build": "webpack --mode production",
+     "lint": "eslint src/**/*.{ts,tsx}",
+     "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
+     "check": "npm run lint && npm run format",
+     "prepare": "husky && husky install",
+     "precommit": "npm run check",
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist"
 }
 ,
      "repository": {
