@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -35,11 +36,16 @@ export default {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'data/data.json', to: 'data/data.json' },
+      ],
+    }),
   ],
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserPlugin(), // Removed invalid terserOptions
+      new TerserPlugin(),
       new CssMinimizerPlugin(),
     ],
     splitChunks: {
