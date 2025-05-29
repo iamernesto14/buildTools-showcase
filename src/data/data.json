@@ -10,7 +10,6 @@
       "icon_url": "https://brandeps.com/logo-download/W/WebPack-logo-vector-01.svg"
     },
     {
-    "id": "turbopack",
     "name": "Turbopack",
     "description": "Turbopack is an incremental bundler optimized for JavaScript and TypeScript, written in Rust.",
     "category": "Modern",
@@ -20,7 +19,6 @@
     "icon_url": "https://svgicons.com/api/ogimage/?id=112121&n=turbopack-icon"
     },
     {
-    "id": "esbuild",
     "name": "esbuild",
     "description": "esbuild is an extremely fast JavaScript bundler and minifier.",
     "category": "Performance",
