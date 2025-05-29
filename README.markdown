@@ -7,7 +7,7 @@ Build Tools Showcase is a web application that displays a collection of modern b
 ## Features
 
 - **Tabbed Interface**: Filter build tools by category (e.g., Traditional, NextGen) or view all tools.
-- **Theme Toggle**: Switch between light and dark themes, with preferences saved in `localStorage`.
+- **Theme Toggle**: Switch between light and dark themes, with preferences.
 - **Responsive Cards**: Display tool details (name, description, category, icon, website link) in fixed-width cards (~250px).
 - **Dynamic Data**: Load build tools from `data/data.json` with error handling.
 - **Timestamp**: Show last updated date in the footer using Moment.js.
@@ -136,4 +136,4 @@ build-tools-showcase/
 
 ## Contact
 
-For questions or issues, contact the maintainers at `<your-email>` or open an issue on the repository.
+For questions or issues, contact the maintainers at `eernesto211@gmail.com` or open an issue on the repository.
