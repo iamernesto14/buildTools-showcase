@@ -315,6 +315,17 @@ body.light-theme {
   hr {
     border-top: 1px solid rgba(85, 85, 85, 0.26);
   }
+
+  .tab {
+    background-color: $gray;
+    border: 1px solid $dim-gray;
+    color: $super-dark-gray;
+  }
+
+  .tab.active {
+    background: $super-dark-gray;
+    color: $primary;
+  }
 }
 
 // media queries
@@ -348,20 +359,19 @@ body.light-theme {
 }
 
 .tab {
-  background: $accent;
-  border: none;
-  padding: 0.75rem 1.5rem;
+  background-color: $dark-charcoal;
+  border: 1px solid $border-opacity;
+  padding: 0.4rem 1.5rem;
   font-size: 1rem;
   color: $text;
   cursor: pointer;
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   transition:
     background 0.3s,
     color 0.3s;
 }
 
 .tab:hover {
-  background: $accent;
   color: $primary;
 }
 
