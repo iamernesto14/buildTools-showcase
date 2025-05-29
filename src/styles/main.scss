@@ -1,0 +1,372 @@
+@use 'variable' as *;
+@use 'base' as *;
+@use 'mixins' as *;
+
+header {
+  @include flex-between;
+  height: 50px;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary;
+}
+
+nav .about {
+  display: none;
+}
+
+hr {
+  margin: 24px 0;
+  border: none;
+  border-top: 1px solid $border-opacity;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+nav .btn {
+  background-color: $gradient;
+  color: $super-dark-gray;
+  padding: 0.75rem 1.3rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $light-gray;
+    color: $primary;
+  }
+}
+
+.theme-toggle {
+  background-color: $gradient;
+  color: $super-dark-gray;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $light-gray;
+  }
+}
+
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+
+  .hero__headline {
+    font-size: 2.5rem;
+    max-width: 20ch;
+    text-align: center;
+    color: $accent;
+    line-height: $line-height-close;
+    font-weight: 700;
+    margin-bottom: 24px;
+
+    span {
+      color: $gradient2;
+    }
+  }
+
+  p {
+    color: $accent;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 1.25rem;
+    max-width: 60ch;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 24px;
+  padding: 24px 0;
+  justify-content: center;
+}
+
+.category-section {
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  color: $primary;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid $accent;
+  padding-bottom: 0.5rem;
+}
+
+.card {
+  background-color: $dark-charcoal;
+  border: 4px solid $border-opacity;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: $box-shadow-shine;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow-bright;
+    border-color: $outline;
+  }
+}
+
+.card__header {
+  @include flex-center;
+  border-radius: 0 0 1rem 1rem;
+  background-color: $super-dark-gray;
+  padding-top: 45%;
+  padding-bottom: 45%;
+  position: relative;
+
+  .image_container {
+    position: absolute;
+    width: 70%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  .image_container:hover {
+    transition: all 0.2s ease-in-out;
+    box-shadow: $box-shadow-bright;
+  }
+
+  .image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.card__logo {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.75rem;
+  background-color: $gradient3;
+  backdrop-filter: blur(40px);
+  transition: opacity 0.2s ease-in-out;
+  z-index: 99;
+}
+
+.card__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $primary;
+  letter-spacing: $letter-spacing-base;
+}
+
+.card__content {
+  background-color: $dark-charcoal;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card__description {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text;
+  line-height: $line-height-base;
+  margin-bottom: 16px;
+}
+
+.card__text {
+  font-size: 0.875rem;
+  color: $gradient2;
+}
+
+.card__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: $super-dark-gray;
+  background-color: $primary;
+  padding: 0.2rem 0.7rem;
+  border-radius: 2rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $gradient3;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 0.875rem;
+  color: $text;
+}
+
+/* Light mode styles */
+body.light-theme {
+  background-color: $gray;
+  color: $super-dark-gray;
+
+  #logo {
+    color: $super-dark-gray;
+  }
+
+  .hero {
+    .hero__headline {
+      color: $light-gray;
+      span {
+        color: $super-dark-gray;
+      }
+    }
+
+    p {
+      color: $dim-gray;
+    }
+  }
+
+  .card {
+    background-color: $gray;
+    border-color: rgba(85, 85, 85, 0.26);
+
+    &:hover {
+      border-color: $dim-gray;
+    }
+  }
+
+  .card__header {
+    background-color: $gradient;
+  }
+
+  .card__content {
+    background-color: $gray;
+  }
+
+  .card__description {
+    color: $super-dark-gray;
+  }
+
+  .card__text {
+    color: $gradient3;
+  }
+
+  .card__link {
+    background-color: $super-dark-gray;
+    color: $accent;
+
+    &:hover {
+      color: $gradient2;
+    }
+  }
+
+  nav .btn {
+    background-color: $gradient2;
+    color: $accent;
+
+    &:hover {
+      background-color: $dim-gray;
+      color: $accent;
+    }
+  }
+
+  .theme-toggle {
+    background-color: $gradient2;
+    color: $accent;
+
+    &:hover {
+      background-color: $dim-gray;
+    }
+  }
+
+  .card__logo {
+    background-color: $gradient2;
+  }
+
+  footer {
+    color: $super-dark-gray;
+  }
+
+  hr {
+    border-top: 1px solid rgba(85, 85, 85, 0.26);
+  }
+}
+
+// media queries
+@media (min-width: 768px) {
+  nav .about {
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  body {
+    padding: 24px 80px;
+  }
+
+  footer {
+    font-size: 1rem;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .hero .hero__headline {
+    font-size: 3rem;
+    max-width: 26ch;
+  }
+}
+
+.tab-bar {
+  @include flex-center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  background: $accent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: $text;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+.tab:hover {
+  background: $accent;
+  color: $primary;
+}
+
+.tab.active {
+  background: $primary;
+  color: $gradient3;
+  font-weight: bold;
+}

@@ -1,0 +1,68 @@
+{
+  "build_tools": [
+    {
+      "name": "Webpack",
+      "description": "A module bundler for JavaScript applications.",
+      "category": "Traditional",
+      "use_cases": ["Bundling", "Optimization"],
+      "key_features": ["Code splitting", "Hot module replacement", "Plugin system"],
+      "website": "https://webpack.js.org/",
+      "icon_url": "https://brandeps.com/logo-download/W/WebPack-logo-vector-01.svg"
+    },
+    {
+    "name": "Turbopack",
+    "description": "Turbopack is an incremental bundler optimized for JavaScript and TypeScript, written in Rust.",
+    "category": "Modern",
+    "use_cases": ["Incremental builds", "Large projects"],
+    "key_features": ["Rust-based performance", "Incremental compilation", "Hot module replacement"],
+    "website": "https://turbo.build/pack",
+    "icon_url": "https://svgicons.com/api/ogimage/?id=112121&n=turbopack-icon"
+    },
+    {
+    "name": "esbuild",
+    "description": "esbuild is an extremely fast JavaScript bundler and minifier.",
+    "category": "Performance",
+    "use_cases": ["Fast builds", "Development server"],
+    "key_features": ["Extremely fast", "Minification", "Tree shaking"],
+    "website": "https://esbuild.github.io/",
+    "icon_url": "https://nono.imgix.net/img/u/video-esbuild-introduction.jpg?auto=format&ixlib=php-3.3.1&q=60&w=1200"
+    },
+    {
+      "name": "Snowpack",
+      "description": "A lightning-fast frontend build tool, designed for modern web development.",
+      "category": "Modern",
+      "use_cases": ["Development", "Static site generation"],
+      "key_features": ["Instant reloads", "Zero-config", "ES module support"],
+      "website": "https://www.snowpack.dev/",
+      "icon_url": "https://miro.medium.com/v2/resize:fit:1200/1*-Q0FXxfZUZplssLxaUz6Gg.jpeg"
+    },
+    {
+      "name": "Browserify",
+      "description": "A tool for bundling JavaScript files for usage in the browser.",
+      "category": "Traditional",
+      "use_cases": ["Module bundling", "Browser compatibility"],
+      "key_features": ["CommonJS support", "Transformations", "Plugins"],
+      "website": "http://browserify.org/",
+      "icon_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOY4JaJwIsU8jIxZKfsTZWbpWaQSIA65KiAw&s"
+    
+    },
+    {
+      "name": "Vite",
+      "description": "A next-generation frontend tooling framework.",
+      "category": "Modern",
+      "use_cases": ["Fast development", "Modern frameworks"],
+      "key_features": ["Instant hot module replacement", "Optimized builds", "ES module support"],
+      "website": "https://vitejs.dev/",
+      "icon_url": "https://cdn.sanity.io/images/bj34pdbp/migration/3da103a4a279be9447e60f81cdeddf695dce4bb8-1244x746.png?w=3840&q=100&fit=max&auto=format"
+    },
+    {
+      "name": "Parcel",
+      "description": "A zero-configuration web application bundler.",
+      "category": "Zero-config",
+      "use_cases": ["Quick setup", "Cross-platform"],
+      "key_features": ["Zero config", "Automatic transforms", "Hot reloading"],
+      "website": "https://parceljs.org/",
+      "icon_url": "https://cdn.hashnode.com/res/hashnode/image/upload/v1609582158664/1BIaQuHPZ.png"
+    }
+  ]
+}
