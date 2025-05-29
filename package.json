@@ -4,47 +4,51 @@
      "version": "1.0.0",
      "main": "script.js",
      "scripts": {
-       "dev": "webpack serve --mode development",
-       "build": "webpack --mode production",
-       "lint": "eslint src/**/*.{ts,tsx}",
-       "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
-       "check": "npm run lint && npm run format",
-       "prepare": "husky && husky install",
-       "precommit": "npm run check"
-     },
+  "dev": "webpack serve --mode development",
+  "build": "webpack --mode production",
+  "lint": "eslint src/**/*.{ts,tsx}",
+  "format": "prettier --write 'src/**/*.{ts,tsx,scss}'",
+  "check": "npm run lint && npm run format",
+  "prepare": "husky && husky install",
+  "precommit": "npm run check",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+,
      "repository": {
-       "type": "git",
-       "url": "https://github.com/iamernesto14/buildTools-showcase.git"
+          "type": "git",
+          "url": "https://github.com/iamernesto14/buildTools-showcase.git"
      },
      "keywords": [],
      "author": "",
      "license": "ISC",
      "bugs": {
-       "url": "https://github.com/iamernesto14/buildTools-showcase/issues"
+          "url": "https://github.com/iamernesto14/buildTools-showcase/issues"
      },
-     "homepage": "https://github.com/iamernesto14/buildTools-showcase#readme",
+     "homepage": "https://iamernesto14.github.io/buildTools-showcase",
      "description": "",
      "devDependencies": {
-       "@eslint/js": "^9.27.0",
-       "@typescript-eslint/eslint-plugin": "^8.33.0",
-       "@typescript-eslint/parser": "^8.33.0",
-       "css-loader": "^7.1.2",
-       "eslint": "^9.27.0",
-       "eslint-config-prettier": "^10.1.5",
-       "eslint-plugin-prettier": "^5.4.0",
-       "globals": "^16.2.0",
-       "html-webpack-plugin": "^5.6.3",
-       "husky": "^8.0.0",
-       "lint-staged": "^16.1.0",
-       "prettier": "^3.5.3",
-       "sass": "^1.89.0",
-       "sass-loader": "^16.0.5",
-       "style-loader": "^4.0.0",
-       "ts-loader": "^9.5.2",
-       "typescript": "^5.8.3",
-       "typescript-eslint": "^8.33.0",
-       "webpack": "^5.99.9",
-       "webpack-cli": "^6.0.1",
-       "webpack-dev-server": "^5.2.1"
+          "@eslint/js": "^9.27.0",
+          "@typescript-eslint/eslint-plugin": "^8.33.0",
+          "@typescript-eslint/parser": "^8.33.0",
+          "css-loader": "^7.1.2",
+          "eslint": "^9.27.0",
+          "eslint-config-prettier": "^10.1.5",
+          "eslint-plugin-prettier": "^5.4.0",
+          "gh-pages": "^6.3.0",
+          "globals": "^16.2.0",
+          "html-webpack-plugin": "^5.6.3",
+          "husky": "^8.0.0",
+          "lint-staged": "^16.1.0",
+          "prettier": "^3.5.3",
+          "sass": "^1.89.0",
+          "sass-loader": "^16.0.5",
+          "style-loader": "^4.0.0",
+          "ts-loader": "^9.5.2",
+          "typescript": "^5.8.3",
+          "typescript-eslint": "^8.33.0",
+          "webpack": "^5.99.9",
+          "webpack-cli": "^6.0.1",
+          "webpack-dev-server": "^5.2.1"
      }
-   }
+}
