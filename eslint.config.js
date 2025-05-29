@@ -26,7 +26,7 @@ export default [
       ...js.configs.recommended.rules,
       ...tsPlugin.configs.recommended.rules,
       ...prettierPlugin.configs.recommended.rules,
-      'no-console': 'warn',
+      // 'no-console': 'warn',
       'semi': ['error', 'always'],
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['error'],

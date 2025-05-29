@@ -37,11 +37,21 @@ export default {
   devServer: {
     static: [
       path.join(__dirname, 'dist'),
-      path.join(__dirname, 'src/data'),
+      {
+        directory: path.join(__dirname, 'src/data'),
+        publicPath: '/data',
+      },
+      {
+        directory: path.join(__dirname, 'src'),
+        publicPath: '/',
+      },
     ],
     compress: true,
     port: 3000,
     open: true,
+    hot: true,
+    liveReload: true,
+    watchFiles: ['src/**/*.{ts,tsx,scss,html,json}'],
   },
   devtool: 'source-map',
 };

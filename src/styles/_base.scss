@@ -36,6 +36,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: $line-height-base;
+  background-color: $bg;
+  color: $text;
+  padding: 24px;
 }
 
 /* Anchor defaults */

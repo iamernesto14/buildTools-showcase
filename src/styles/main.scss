@@ -2,11 +2,182 @@
 @use 'base' as *;
 @use 'mixins' as *;
 
-h1 {
-  background-color: $primary;
-  color: $light-gray;
+header {
+  @include flex-between;
+  height: 50px;
 }
 
-body {
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $primary;
+}
+
+nav .about {
+  display: none;
+}
+
+hr {
+  margin: 24px 0;
+  border: none;
+  border-top: 1px solid $border-opacity;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+nav .btn {
+  background-color: $gradient;
+  color: $super-dark-gray;
+  padding: 0.75rem 1.3rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $light-gray;
+    color: $primary;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.card {
+  background-color: $dark-charcoal;
+  border: 4px solid $border-opacity;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 100%;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: $box-shadow-shine;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow-bright;
+    border-color: $outline;
+  }
+}
+
+.card__header {
   @include flex-center;
+  border-radius: 0 0 1rem 1rem;
+  background-color: $super-dark-gray;
+  padding-top: 45%;
+  padding-bottom: 45%;
+  position: relative;
+
+  .image_container {
+    position: absolute;
+    width: 70%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  .image_container:hover {
+    transition: all 0.2s ease-in-out;
+    box-shadow: $box-shadow-bright;
+  }
+
+  .image_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.card__logo {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.75rem;
+  background-color: $gradient3;
+  backdrop-filter: blur(40px);
+  transition: opacity 0.2s ease-in-out;
+  z-index: 99;
+}
+
+.card__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $primary;
+  letter-spacing: $letter-spacing-base;
+}
+
+.card__content {
+  background-color: $dark-charcoal;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card__description {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $text;
+  line-height: $line-height-base;
+  margin-bottom: 16px;
+}
+
+.card__text {
+  font-size: 0.875rem;
+  color: $gradient2;
+}
+
+.card__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: $super-dark-gray;
+  background-color: $primary;
+  padding: 0.2rem 0.7rem;
+  border-radius: 2rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $gradient3;
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 0.875rem;
+  color: $text;
+}
+
+// media queries
+@media (min-width: 768px) {
+  nav .about {
+    display: block;
+  }
+
+  body {
+    padding: 24px 80px;
+  }
+
+  footer {
+    font-size: 1rem;
+    flex-direction: row;
+    gap: 16px;
+  }
 }
