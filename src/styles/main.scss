@@ -25,7 +25,7 @@ hr {
 
 nav {
   display: flex;
-  gap: 24px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -41,6 +41,22 @@ nav .btn {
   &:hover {
     background-color: $light-gray;
     color: $primary;
+  }
+}
+
+.theme-toggle {
+  background-color: $gradient;
+  color: $super-dark-gray;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $light-gray;
   }
 }
 
@@ -197,6 +213,94 @@ footer {
   padding: 24px 0;
   font-size: 0.875rem;
   color: $text;
+}
+
+/* Light mode styles */
+body.light-theme {
+  background-color: $gray;
+  color: $super-dark-gray;
+
+  #logo {
+    color: $super-dark-gray;
+  }
+
+  .hero {
+    .hero__headline {
+      color: $light-gray;
+      span {
+        color: $super-dark-gray;
+      }
+    }
+
+    p {
+      color: $dim-gray;
+    }
+  }
+
+  .card {
+    background-color: $gray;
+    border-color: rgba(85, 85, 85, 0.26);
+
+    &:hover {
+      border-color: $dim-gray;
+    }
+  }
+
+  .card__header {
+    background-color: $gradient;
+  }
+
+  .card__content {
+    background-color: $gray;
+  }
+
+  .card__description {
+    color: $super-dark-gray;
+  }
+
+  .card__text {
+    color: $gradient3;
+  }
+
+  .card__link {
+    background-color: $super-dark-gray;
+    color: $accent;
+
+    &:hover {
+      color: $gradient2;
+    }
+  }
+
+  nav .btn {
+    background-color: $gradient2;
+    color: $accent;
+
+    &:hover {
+      background-color: $dim-gray;
+      color: $accent;
+    }
+  }
+
+  .theme-toggle {
+    background-color: $gradient2;
+    color: $accent;
+
+    &:hover {
+      background-color: $dim-gray;
+    }
+  }
+
+  .card__logo {
+    background-color: $gradient2;
+  }
+
+  footer {
+    color: $super-dark-gray;
+  }
+
+  hr {
+    border-top: 1px solid rgba(85, 85, 85, 0.26);
+  }
 }
 
 // media queries

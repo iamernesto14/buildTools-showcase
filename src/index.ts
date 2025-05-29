@@ -15,6 +15,32 @@ interface BuildToolsData {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // Apply saved theme from localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    updateThemeToggleIcon(true);
+  }
+
+  // Theme toggle button
+  const themeToggle = document.querySelector(
+    '.theme-toggle'
+  ) as HTMLButtonElement;
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isLightTheme = document.body.classList.toggle('light-theme');
+      localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+      updateThemeToggleIcon(isLightTheme);
+    });
+  }
+
+  // Update toggle button icon
+  function updateThemeToggleIcon(isLight: boolean) {
+    if (themeToggle) {
+      themeToggle.textContent = isLight ? '🌙' : '☀';
+    }
+  }
+
   try {
     const response = await fetch('/data/data.json');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
