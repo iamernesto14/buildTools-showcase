@@ -46,35 +46,35 @@ nav .btn {
 
 .hero {
   margin-left: auto;
-  margin-right: auto;        
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5rem;           
+  margin-top: 5rem;
   margin-bottom: 2.5rem;
 
   .hero__headline {
-  font-size: 2.5rem;           
-  max-width: 20ch;           
-  text-align: center;
-  color: $accent;   
-  line-height: $line-height-close;
-  font-weight: 700;
-  margin-bottom: 24px;
+    font-size: 2.5rem;
+    max-width: 20ch;
+    text-align: center;
+    color: $accent;
+    line-height: $line-height-close;
+    font-weight: 700;
+    margin-bottom: 24px;
 
-  span {
-    color: $gradient2;
+    span {
+      color: $gradient2;
+    }
   }
-}
 
   p {
-  color: $accent;
-  margin-left: auto;
-  margin-right: auto;  
-  font-size: 1.2rem; 
-  text-align: center;
-  padding-top: 1.25rem; 
-  max-width: 60ch;  
+    color: $accent;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 1.25rem;
+    max-width: 60ch;
   }
 }
 
@@ -217,7 +217,7 @@ footer {
   }
 
   .hero .hero__headline {
-    font-size: 3rem;          
-    max-width: 26ch;          
+    font-size: 3rem;
+    max-width: 26ch;
   }
 }
