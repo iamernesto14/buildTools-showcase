@@ -1,82 +1,78 @@
 import './styles/main.scss';
 import type { BuildTool, BuildToolsData } from './types';
+import moment from 'moment';
 
-document.addEventListener('DOMContentLoaded', async () => {
+export function updateThemeToggleIcon(
+  isLight: boolean,
+  themeToggle: HTMLButtonElement | null
+) {
+  if (themeToggle) {
+    themeToggle.textContent = isLight ? '🌙' : '☀️';
+  }
+}
+
+export function renderCards(
+  selectedCategory: string,
+  tools: BuildTool[],
+  cardContainer: HTMLElement,
+  tabBar: HTMLElement
+) {
+  cardContainer.innerHTML = '';
+  const filteredTools =
+    selectedCategory === 'All'
+      ? tools
+      : tools.filter((tool) => tool.category === selectedCategory);
+
+  filteredTools.forEach((tool: BuildTool) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card__header">
+        <div class="image_container">
+          <img src="${tool.icon_url}" alt="${tool.name} icon" class="card__img">
+        </div>
+        <div class="card__logo">${tool.category}</div>
+      </div>
+      <div class="card__content">
+        <h2 class="card__description">${tool.name}</h2>
+        <div class="card__text">${tool.description}</div>
+        <a href="${tool.website}" target="_blank" class="card__link">Learn More</a>
+      </div>
+    `;
+    cardContainer.appendChild(card);
+  });
+
+  // Update active tab
+  const tabs = tabBar.querySelectorAll('.tab');
+  tabs.forEach((tab) => {
+    tab.classList.toggle(
+      'active',
+      tab.getAttribute('data-category') === selectedCategory
+    );
+  });
+}
+
+export async function initializeApp() {
   // Apply saved theme from localStorage
   const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-    updateThemeToggleIcon(true);
-  }
-
-  // Theme toggle button
   const themeToggle = document.querySelector(
     '.theme-toggle'
   ) as HTMLButtonElement;
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    updateThemeToggleIcon(true, themeToggle);
+  }
+
+  // Theme toggle button
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const isLightTheme = document.body.classList.toggle('light-theme');
       localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
-      updateThemeToggleIcon(isLightTheme);
-    });
-  }
-
-  // Update theme toggle icon
-  function updateThemeToggleIcon(isLight: boolean) {
-    if (themeToggle) {
-      themeToggle.textContent = isLight ? '🌙' : '☀️';
-    }
-  }
-
-  // Render cards for a given category
-  function renderCards(
-    selectedCategory: string,
-    tools: BuildTool[],
-    cardContainer: HTMLElement,
-    tabBar: HTMLElement
-  ) {
-    cardContainer.innerHTML = '';
-    const filteredTools =
-      selectedCategory === 'All'
-        ? tools
-        : tools.filter((tool) => tool.category === selectedCategory);
-
-    // Optional: Sort cards alphabetically by name
-    // filteredTools.sort((a, b) => a.name.localeCompare(b.name));
-
-    filteredTools.forEach((tool: BuildTool) => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div class="card__header">
-          <div class="image_container">
-            <img src="${tool.icon_url}" alt="${tool.name} icon" class="card__img">
-          </div>
-          <div class="card__logo">${tool.category}</div>
-        </div>
-        <div class="card__content">
-          <h2 class="card__description">${tool.name}</h2>
-          <div class="card__text">${tool.description}</div>
-          <a href="${tool.website}" target="_blank" class="card__link">Learn More</a>
-        </div>
-      `;
-      cardContainer.appendChild(card);
-    });
-
-    // Update active tab
-    const tabs = tabBar.querySelectorAll('.tab');
-    tabs.forEach((tab) => {
-      tab.classList.toggle(
-        'active',
-        tab.getAttribute('data-category') === selectedCategory
-      );
+      updateThemeToggleIcon(isLightTheme, themeToggle);
     });
   }
 
   try {
-    // Load Moment.js
-    const moment = (await import('moment')).default;
-
     // Fetch build tools data
     const response = await fetch('./data/data.json');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -138,4 +134,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         '<p>Error loading tools. Please try again later.</p>';
     }
   }
-});
+}
+
+document.addEventListener('DOMContentLoaded', initializeApp);
