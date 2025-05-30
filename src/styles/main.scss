@@ -316,19 +316,22 @@ body.light-theme {
     border-top: 1px solid rgba(85, 85, 85, 0.26);
   }
 
-  .tab {
-    background-color: $gray;
-    border: 1px solid $dim-gray;
-    color: $super-dark-gray;
-  }
-
   .tab.active {
     background: $super-dark-gray;
     color: $primary;
   }
+  .tab:hover {
+  color: $dark-charcoal;
+  background-color: $gradient;
+  border: 1px solid $super-dark-gray;
 }
 
-// media queries
+.tab-bar.expanded {
+    background-color: $gray;
+    margin: 10px;
+  }
+}
+
 @media (min-width: 768px) {
   nav .about {
     display: block;
@@ -354,7 +357,7 @@ body.light-theme {
   @include flex-center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .tab {
@@ -371,11 +374,47 @@ body.light-theme {
 }
 
 .tab:hover {
-  color: $primary;
+  color: $dark-charcoal;
+  background-color: $gradient;
 }
 
 .tab.active {
-  background: $primary;
-  color: $gradient3;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .tab {
+    display: none;
+  }
+
+  .tab.active {
+    display: block;
+  }
+
+  .tab-bar.expanded .tab {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .tab-bar.expanded {
+    background-color: $dark-charcoal;
+    border: 1px solid $border-opacity;
+    margin: 10px;
+  }
+
+  body {
+    padding-bottom: 60px; 
+  }
 }

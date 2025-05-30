@@ -42,7 +42,6 @@ export function renderCards(
     cardContainer.appendChild(card);
   });
 
-  // Update active tab
   const tabs = tabBar.querySelectorAll('.tab');
   tabs.forEach((tab) => {
     tab.classList.toggle(
@@ -53,7 +52,6 @@ export function renderCards(
 }
 
 export async function initializeApp() {
-  // Apply saved theme from localStorage
   const savedTheme = localStorage.getItem('theme');
   const themeToggle = document.querySelector(
     '.theme-toggle'
@@ -84,13 +82,11 @@ export async function initializeApp() {
       return;
     }
 
-    // Get unique categories
     const categories = [
       'All',
       ...Array.from(new Set(data.build_tools.map((tool) => tool.category))),
     ];
 
-    // Create tab bar
     const tabBar = document.createElement('div');
     tabBar.className = 'tab-bar';
     categories.forEach((category) => {
@@ -102,7 +98,6 @@ export async function initializeApp() {
     });
     container.appendChild(tabBar);
 
-    // Create card container
     const cardContainer = document.createElement('div');
     cardContainer.className = 'card-container';
     container.appendChild(cardContainer);
@@ -110,18 +105,27 @@ export async function initializeApp() {
     // Initialize with 'All' tab
     renderCards('All', data.build_tools, cardContainer, tabBar);
 
-    // Tab click handler
-    tabBar.addEventListener('click', (event) => {
+    tabBar.addEventListener('click', (event: Event) => {
       const target = event.target as HTMLElement;
-      if (target.classList.contains('tab')) {
-        const category = target.getAttribute('data-category');
-        if (category) {
+      if (!target || !target.classList.contains('tab')) {
+        return;
+      }
+      const category = target.getAttribute('data-category');
+      if (category) {
+        if (window.innerWidth <= 768) {
+          // Mobile view
+          if (tabBar.classList.contains('expanded')) {
+            renderCards(category, data.build_tools, cardContainer, tabBar);
+            tabBar.classList.remove('expanded');
+          } else {
+            tabBar.classList.add('expanded');
+          }
+        } else {
           renderCards(category, data.build_tools, cardContainer, tabBar);
         }
       }
     });
 
-    // Update footer with timestamp
     const footer = document.querySelector('footer p') as HTMLElement;
     if (footer) {
       footer.innerHTML += ` | Last updated: ${moment().format('MMMM D, YYYY')}`;
