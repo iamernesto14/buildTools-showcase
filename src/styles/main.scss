@@ -321,12 +321,12 @@ body.light-theme {
     color: $primary;
   }
   .tab:hover {
-  color: $dark-charcoal;
-  background-color: $gradient;
-  border: 1px solid $super-dark-gray;
-}
+    color: $dark-charcoal;
+    background-color: $gradient;
+    border: 1px solid $super-dark-gray;
+  }
 
-.tab-bar.expanded {
+  .tab-bar.expanded {
     background-color: $gray;
     margin: 10px;
   }
@@ -415,6 +415,6 @@ body.light-theme {
   }
 
   body {
-    padding-bottom: 60px; 
+    padding-bottom: 60px;
   }
 }
