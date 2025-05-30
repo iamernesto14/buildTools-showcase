@@ -63,6 +63,24 @@
       "key_features": ["Zero config", "Automatic transforms", "Hot reloading"],
       "website": "https://parceljs.org/",
       "icon_url": "https://cdn.hashnode.com/res/hashnode/image/upload/v1609582158664/1BIaQuHPZ.png"
+    },
+    {
+      "name": "Grunt",
+      "description": "A JavaScript task runner used to automate tasks like minification, compilation, and testing.",
+      "category": "Traditional",
+      "use_cases": ["Task automation", "Build scripting"],
+      "key_features": ["Extensive plugins", "Custom task runner", "Simple configuration"],
+      "website": "https://gruntjs.com/",
+      "icon_url": "https://gruntjs.com/img/grunt-logo-no-wordmark.svg"
+    },
+    {
+      "name": "Gulp",
+      "description": "A toolkit to automate and enhance your workflow by using code over configuration.",
+      "category": "Traditional",
+      "use_cases": ["Streaming builds", "Pipeline automation"],
+      "key_features": ["Stream-based processing", "Code over configuration", "Fast and efficient"],
+      "website": "https://gulpjs.com/",
+      "icon_url": "https://gulpjs.com/img/gulp-white-text.svg"
     }
   ]
 }
